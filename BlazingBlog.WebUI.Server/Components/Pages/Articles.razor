@@ -19,9 +19,9 @@ else
 }
 @code {
     private List<Article> articles = new List<Article>();
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        var result = ArticleService.GetAllArticles();
+        var result = await ArticleService.GetAllArticlesAsync();
         if (result is not null)
             articles = result;
     }
